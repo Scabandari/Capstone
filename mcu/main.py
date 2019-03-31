@@ -35,8 +35,7 @@ def main():
     do_connect ()
     led = machine.Pin (2, machine.Pin.OUT)
     sensor = HCSR04 (trigger_pin=5, echo_pin=4)
-    #while True:
-    for i in range(200):
+    while True:
         distance = sensor.distance_cm ()
         if(distance > 1 and distance < 390):
             led.off ()  # led.off() actually means on, must be active low
